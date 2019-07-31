@@ -20,12 +20,17 @@ namespace REST_Client
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            //creates a new instance of the restClient class
             restClient rClient = new restClient();
+            //Set a variable within the class to be equal to the text in the URL textbox
             rClient.endPoint = txtUrl.Text;
 
+            //Create a string
             string strResponse = string.Empty;
+            //Make the variable equal to the value returned from rClient's makeRequest funtion
             strResponse = rClient.makeRequest();
 
+            //Dsiplay strResponse in the response textbox
             txtResponse.Text = strResponse;
         }
     }
